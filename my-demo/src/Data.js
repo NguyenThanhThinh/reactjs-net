@@ -87,6 +87,12 @@ const data = {
         return new Promise((resolve, reject) => {
             resolve(Books)
         })
+    },
+    getAuthorByBook: (bookId) => {
+        bookId = Number(bookId)
+        return new Promise((resolve, reject) => {
+            resolve(Authors.filter(a => a.books.indexOf(bookId) > -1)[0])
+        })
     }
 
 }
